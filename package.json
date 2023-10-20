@@ -8,7 +8,8 @@
   "scripts": {
     "build": "npm run copyfiles && tsc",
     "copyfiles": "copyfiles \"templates/**/*.txt\" build",
-    "lint": "eslint . --ext=.ts --fix"
+    "lint": "eslint . --ext=.ts --fix",
+    "format": "prettier --write ."
   },
   "exports": {
     ".": {
@@ -28,12 +29,23 @@
     "build/standalone.d.ts"
   ],
   "license": "ISC",
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": false,
+    "singleQuote": true,
+    "useTabs": false,
+    "quoteProps": "consistent",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "printWidth": 100
+  },
   "devDependencies": {
     "@adonisjs/ace": "^11.3.1",
     "@adonisjs/core": "^5.9.0",
     "@types/node": "^18.15.7",
     "adonis-preset-ts": "^2.1.0",
     "eslint": "^8.36.0",
+    "prettier": "^3.0.3",
     "typescript": "^5.0.2"
   },
   "dependencies": {
@@ -48,6 +60,14 @@
     "type-graphql": "^2.0.0-beta.3"
   },
   "adonisjs": {
+    "templates": {
+      "config": [
+        {
+          "src": "config.txt",
+          "dest": "graphql.ts"
+        }
+      ]
+    },
     "types": "adonis-type-graphql",
     "providers": [
       "adonis-type-graphql"
