@@ -1,8 +1,8 @@
+import * as fs from 'fs'
+import * as path from 'path'
 import { buildTypeDefsAndResolvers } from 'type-graphql'
 import { GraphQLConfig } from '@ioc:Adonis/Addons/GraphqlManager'
 import { makeExecutableSchema } from '@graphql-tools/schema'
-import * as fs from 'fs'
-import * as path from 'path'
 
 export default class Schema {
   public static async boostrap(config: GraphQLConfig) {
