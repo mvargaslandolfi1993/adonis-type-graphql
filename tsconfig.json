@@ -1,21 +1,14 @@
 {
-  "include": [
-    "**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "build",
-    "example"
-  ],
+  "include": ["**/*"],
+  "exclude": ["node_modules", "build", "example"],
   "extends": "./node_modules/adonis-preset-ts/tsconfig",
   "compilerOptions": {
+    "moduleResolution": "node",
     "target": "es6",
     "outDir": "build",
     "rootDir": "./",
     "sourceMap": true,
     "declaration": true,
-    "types": [
-      "@adonisjs/core"
-    ]
+    "types": ["@adonisjs/core"]
   }
 }
