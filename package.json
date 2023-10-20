@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Seamlessly integrate Type-GraphQL and launch Apollo Server in Adonis JS applications.",
   "author": "Miguel Vargas",
-  "types": "adonis-typings/index.d.ts",
+  "types": "adonis-typings/index.ts",
   "main": "providers/index.ts",
   "scripts": {
     "build": "npm run copyfiles && tsc",
