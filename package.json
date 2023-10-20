@@ -1,0 +1,63 @@
+{
+  "name": "adonis-type-graphql",
+  "version": "0.0.1",
+  "description": "Seamlessly integrate Type-GraphQL and launch Apollo Server in Adonis JS applications.",
+  "author": "Miguel Vargas",
+  "types": "build/adonis-typings/index.d.ts",
+  "main": "build/providers/index.js",
+  "scripts": {
+    "build": "npm run copyfiles && tsc",
+    "copyfiles": "copyfiles \"templates/**/*.txt\" build",
+    "lint": "eslint . --ext=.ts --fix"
+  },
+  "exports": {
+    ".": {
+      "types": "./build/adonis-typings/index.d.ts",
+      "require": "./build/providers/index.js"
+    },
+    "./commands": "./build/commands/index.js",
+    "./*": "./*"
+  },
+  "files": [
+    "build/adonis-typings",
+    "build/commands",
+    "build/providers",
+    "build/templates",
+    "build/src",
+    "build/standalone.js",
+    "build/standalone.d.ts"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "@adonisjs/ace": "^11.3.1",
+    "@adonisjs/core": "^5.9.0",
+    "@types/node": "^18.15.7",
+    "adonis-preset-ts": "^2.1.0",
+    "eslint": "^8.36.0",
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.9.4",
+    "@graphql-tools/load-files": "^7.0.0",
+    "copyfiles": "^2.4.1",
+    "globby": "^13.2.2",
+    "graphql": "^16.8.1",
+    "graphql-tools": "^9.0.0",
+    "graphql-type-json": "^0.3.2",
+    "graphql-upload": "^16.0.2",
+    "type-graphql": "^2.0.0-beta.3"
+  },
+  "adonisjs": {
+    "types": "adonis-type-graphql",
+    "providers": [
+      "adonis-type-graphql"
+    ],
+    "commands": [
+      "adonis-type-graphql/build/commands"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mvargaslandolfi1993/adonis-type-graphql.git"
+  }
+}
