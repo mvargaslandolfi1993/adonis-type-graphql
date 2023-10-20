@@ -11,9 +11,6 @@
     "lint": "eslint . --ext=.ts --fix",
     "format": "prettier --write ."
   },
-  "exports": {
-    "./*": "./*"
-  },
   "license": "ISC",
   "prettier": {
     "trailingComma": "es5",
