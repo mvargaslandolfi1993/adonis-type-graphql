@@ -1,16 +1,37 @@
 {
   "name": "adonis-type-graphql",
-  "version": "0.0.1",
+  "version": "0.0.19",
   "description": "Seamlessly integrate Type-GraphQL and launch Apollo Server in Adonis JS applications.",
   "author": "Miguel Vargas",
-  "types": "adonis-typings/index.ts",
-  "main": "providers/index.ts",
+  "types": "build/adonis-typings/index.d.ts",
+  "main": "build/providers/index.js",
   "scripts": {
     "build": "npm run copyfiles && tsc",
     "copyfiles": "copyfiles \"templates/**/*.txt\" build",
     "lint": "eslint . --ext=.ts --fix",
     "format": "prettier --write ."
   },
+  "exports": {
+    ".": {
+      "types": "./build/adonis-typings/index.d.ts",
+      "require": "./build/providers/index.js"
+    },
+    "./commands": "./build/commands/index.js",
+    "./commands/CreateGraphqlModel": "./build/commands/CreateGraphqlModel.js",
+    "./build/commands": "./build/commands/index.js",
+    "./build/commands/CreateGraphqlModel": "./build/commands/CreateGraphqlModel.js",
+    "./build/config": "./build/grapqhl.js",
+    "./*": "./*"
+  },
+  "files": [
+    "build/adonis-typings",
+    "build/commands",
+    "build/providers",
+    "build/templates",
+    "build/src",
+    "build/standalone.js",
+    "build/standalone.d.ts"
+  ],
   "license": "ISC",
   "prettier": {
     "trailingComma": "es5",
@@ -40,7 +61,8 @@
     "graphql-tools": "^9.0.0",
     "graphql-type-json": "^0.3.2",
     "graphql-upload": "^16.0.2",
-    "type-graphql": "^2.0.0-beta.3"
+    "type-graphql": "^2.0.0-beta.3",
+    "typedi": "^0.10.0"
   },
   "adonisjs": {
     "templates": {
@@ -54,6 +76,9 @@
     "types": "adonis-type-graphql",
     "providers": [
       "adonis-type-graphql"
+    ],
+    "commands": [
+      "adonis-type-graphql/build/commands"
     ]
   },
   "repository": {

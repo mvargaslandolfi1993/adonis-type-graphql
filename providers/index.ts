@@ -13,7 +13,5 @@ export default class GraphQLProvider {
 
       return new ApolloServer(graphQLConfig)
     })
-
-
   }
 }

@@ -1,0 +1,18 @@
+import {
+    Resolver,
+    Query,
+    Arg,
+    ResolverInterface,
+  } from "type-graphql";
+  import { {{ModelType}} } from "./type";
+  import {{Model}} from "App/Models/{{Model}}";
+  
+  @Resolver(_of => {{ModelType}})
+  //@ts-ignore
+  export class {{ResolverClassName}} implements ResolverInterface<{{ModelType}}> {
+  
+    @Query(_returns => {{ModelType}}, { nullable: true })
+    async user(@Arg("id") id: string): Promise<{{ModelType}} | null> {
+        return await {{Model}}.find(id);
+    }
+  }

@@ -1,0 +1,8 @@
+import { {{ModelType}} } from "./type";
+import { InputType, Field } from "type-graphql";
+
+@InputType()
+export class {{InputClassName}} implements Partial<{{ModelType}}> {
+  @Field()
+  id: string;
+}
