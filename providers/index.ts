@@ -1,6 +1,7 @@
 import { GraphQLConfig } from '@ioc:Adonis/Addons/GraphqlManager'
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
 import ApolloServer from '../src/Server/ApolloServer'
+import GraphQLError from 'src/Errors'
 
 export default class GraphQLProvider {
   constructor(protected app: ApplicationContract) {}
@@ -13,5 +14,8 @@ export default class GraphQLProvider {
 
       return new ApolloServer(graphQLConfig)
     })
+
+    this.app.container.singleton('Adonis/Addons/GraphQLError', () => GraphQLError)
+
   }
 }
