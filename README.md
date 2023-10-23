@@ -180,5 +180,6 @@ In this example project, you can explore how to:
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
-![npm](https://img.shields.io/npm/v/:adonis-type-graphql)
+![npm](https://img.shields.io/npm/v/adonis-type-graphql)
+
 
