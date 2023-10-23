@@ -3,7 +3,7 @@ import * as path from 'path'
 import { buildTypeDefsAndResolvers } from 'type-graphql'
 import { GraphQLConfig } from '@ioc:Adonis/Addons/GraphqlManager'
 import { makeExecutableSchema } from '@graphql-tools/schema'
-import { Container } from "typedi";
+import { Container } from 'typedi'
 
 export default class Schema {
   public static async boostrap(config: GraphQLConfig) {
@@ -17,7 +17,7 @@ export default class Schema {
 
     const { typeDefs, resolvers } = await buildTypeDefsAndResolvers({
       resolvers: [resolversModules[0], ...resolversModules.slice(1)],
-      container: Container
+      container: Container,
     })
 
     const schema = makeExecutableSchema({ typeDefs, resolvers })

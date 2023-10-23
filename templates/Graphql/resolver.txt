@@ -7,12 +7,12 @@ import {
   import { {{ModelType}} } from "./type";
   import {{Model}} from "App/Models/{{Model}}";
   
+  @Service()
   @Resolver(_of => {{ModelType}})
-  //@ts-ignore
-  export class {{ResolverClassName}} implements ResolverInterface<{{ModelType}}> {
+  export class {{ResolverClassName}} {
   
     @Query(_returns => {{ModelType}}, { nullable: true })
-    async user(@Arg("id") id: string): Promise<{{ModelType}} | null> {
+    async {{Model}}(@Arg("id") id: string): Promise<{{ModelType}} | null> {
         return await {{Model}}.find(id);
     }
   }

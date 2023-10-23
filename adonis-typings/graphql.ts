@@ -11,13 +11,6 @@ declare module '@ioc:Adonis/Addons/GraphqlManager' {
 
   export interface GraphQLConfig {
     /**
-     * The GraphQL Schema path
-     *
-     * @example ../app/Schemas
-     */
-    schemas: string
-
-    /**
      * The GraphQL Resolver path
      *
      * @example ../app/Resolvers

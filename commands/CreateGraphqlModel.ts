@@ -38,10 +38,12 @@ export default class CreateGraphqlModel extends BaseCommand {
 
   private toCamelCase(input) {
     return input
+      .toLowerCase()
       .replace(/[-_](.)/g, function (_match, group1) {
         return group1.toUpperCase()
       })
       .replace(/^\w/, (firstChar) => firstChar.toUpperCase())
+
   }
 
   private getModelResolverName(modelName) {

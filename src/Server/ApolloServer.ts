@@ -9,7 +9,7 @@ import { Readable } from 'stream'
 import {
   ApolloServerPluginLandingPageLocalDefault,
   ApolloServerPluginLandingPageProductionDefault,
-} from '@apollo/server/plugin/landingPage/default';
+} from '@apollo/server/plugin/landingPage/default'
 
 interface Context {
   ctx: HttpContextContract
@@ -69,7 +69,7 @@ export default class ApolloServer implements GraphQLManagerContract {
           : ApolloServerPluginLandingPageLocalDefault({ embed: false }),
       ],
       formatError(formattedError, _error) {
-        return { message: formattedError.message };
+        return { ...formattedError }
       },
     })
 
