@@ -5,6 +5,7 @@
   "author": "Miguel Vargas",
   "types": "build/adonis-typings/index.d.ts",
   "main": "build/providers/index.js",
+  "keywords": ["adonis", "adonisjs", "apollo server", "graphql", "type-graphql", "typescript", "nodejs"],
   "scripts": {
     "build": "npm run copyfiles && tsc",
     "copyfiles": "copyfiles \"templates/**/*.txt\" build",
