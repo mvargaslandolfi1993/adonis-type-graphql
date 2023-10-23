@@ -59,6 +59,9 @@ export default class ApolloServer implements GraphQLManagerContract {
 
     const server = new ApolloServerClass<Context>({
       ...this.$apolloConfig,
+      formatError(formattedError, _error) {
+        return { message: formattedError.message };
+      },
     })
 
     await server.start()
