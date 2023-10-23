@@ -1,6 +1,6 @@
 {
   "name": "adonis-type-graphql",
-  "version": "0.0.29",
+  "version": "1.0.0",
   "description": "Seamlessly integrate Type-GraphQL and launch Apollo Server in Adonis JS applications.",
   "author": "Miguel Vargas",
   "types": "build/adonis-typings/index.d.ts",
