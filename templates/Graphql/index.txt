@@ -1,0 +1,3 @@
+import { {{ resolverClassName }} } from "./resolver";
+
+export default {{ resolverClassName }}

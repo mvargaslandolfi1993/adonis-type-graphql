@@ -6,6 +6,10 @@ import Schema from '../Schema'
 import { typeDefs as scalarTypeDefs, resolvers as scalarResolvers } from 'graphql-scalars'
 import { IncomingHttpHeaders } from 'http'
 import { Readable } from 'stream'
+import {
+  ApolloServerPluginLandingPageLocalDefault,
+  ApolloServerPluginLandingPageProductionDefault,
+} from '@apollo/server/plugin/landingPage/default'
 
 interface Context {
   ctx: HttpContextContract
@@ -59,6 +63,14 @@ export default class ApolloServer implements GraphQLManagerContract {
 
     const server = new ApolloServerClass<Context>({
       ...this.$apolloConfig,
+      plugins: [
+        process.env.NODE_ENV === 'production'
+          ? ApolloServerPluginLandingPageProductionDefault()
+          : ApolloServerPluginLandingPageLocalDefault({ embed: false }),
+      ],
+      formatError(formattedError, _error) {
+        return { ...formattedError }
+      },
     })
 
     await server.start()
