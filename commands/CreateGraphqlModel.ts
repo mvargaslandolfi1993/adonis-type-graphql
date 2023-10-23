@@ -43,7 +43,7 @@ export default class CreateGraphqlModel extends BaseCommand {
         return group1.toUpperCase()
       })
       .replace(/^\w/, (firstChar) => firstChar.toUpperCase())
-
+      .replace(/s$/, '');
   }
 
   private getModelResolverName(modelName) {

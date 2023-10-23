@@ -1,7 +1,7 @@
 import { Field, ObjectType } from 'type-graphql'
 import { {{modelType}} } from './type'
 
-@ObjectType({ description: 'Object representing {{Model}}' })
+@ObjectType({ description: 'Object representing {{model}}' })
 export class PaginatedResponseClass {
   @Field((_type) => [{{modelType}}])
   data: {{modelType}}[]

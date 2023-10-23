@@ -2,8 +2,8 @@ import {
     Resolver,
     Query,
     Arg,
-    ResolverInterface,
   } from "type-graphql";
+  import { Service } from 'typedi'
   import { {{ModelType}} } from "./type";
   import {{Model}} from "App/Models/{{Model}}";
   
